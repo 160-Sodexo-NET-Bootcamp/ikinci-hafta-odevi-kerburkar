@@ -1,0 +1,12 @@
+C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\Data\bin\Debug\net5.0\Data.deps.json
+C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\Data\bin\Debug\net5.0\Data.dll
+C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\Data\bin\Debug\net5.0\ref\Data.dll
+C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\Data\bin\Debug\net5.0\Data.pdb
+C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\Data\obj\Debug\net5.0\Data.csproj.AssemblyReference.cache
+C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\Data\obj\Debug\net5.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\Data\obj\Debug\net5.0\Data.AssemblyInfoInputs.cache
+C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\Data\obj\Debug\net5.0\Data.AssemblyInfo.cs
+C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\Data\obj\Debug\net5.0\Data.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\Data\obj\Debug\net5.0\Data.dll
+C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\Data\obj\Debug\net5.0\ref\Data.dll
+C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\Data\obj\Debug\net5.0\Data.pdb
