@@ -61,3 +61,5 @@ C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\
 C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\API\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\Asus\source\repos\160-Sodexo-NET-Bootcamp\ikinci-hafta-odevi-kerburkar\KerimeBurcuKaratas_Odev2\API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

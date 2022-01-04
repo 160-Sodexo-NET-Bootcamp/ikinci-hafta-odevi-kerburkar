@@ -1,8 +1,11 @@
-﻿using Data.DataModel;
+﻿using API.Dtos;
+using AutoMapper;
+using Data.DataModel;
 using Data.Uow;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace API.Controllers
@@ -13,11 +16,12 @@ namespace API.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly ILogger<VehicleController> _logger;
-        public VehicleController(IUnitOfWork unitOfWork,ILogger<VehicleController> logger)
+        private readonly IMapper _mapper;
+        public VehicleController(IUnitOfWork unitOfWork,ILogger<VehicleController> logger, IMapper mapper)
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
-
+            _mapper = mapper;
         }
 
         //Tüm vehicle listesini göstermek için kullanıldı.
@@ -25,7 +29,9 @@ namespace API.Controllers
         public async Task<IActionResult> GetAll()
         {
             var result = await _unitOfWork.Vehicle.GetAll();
-            return Ok(result);
+            var map = _mapper.Map<IEnumerable<VehicleDto>>(result);
+            return Ok(map);
+
         }
 
         //Verilen id ile vehicle ve container görüntülemek için kullanıldı.

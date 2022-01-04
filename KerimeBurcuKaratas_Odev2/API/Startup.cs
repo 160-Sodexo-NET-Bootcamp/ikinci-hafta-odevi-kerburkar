@@ -1,3 +1,4 @@
+using API.Common;
 using Data.Context;
 using Data.Uow;
 using Microsoft.AspNetCore.Builder;
@@ -12,6 +13,7 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace API
@@ -34,6 +36,9 @@ namespace API
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
                 );
 
+            //AutoMapper kullanýmý için eklendi.
+            services.AddAutoMapper(typeof(MappingProfile));
+
             services.AddControllers();
 
             //appsettings.json'daki ConnectionStrings'da "DefaultConnection" ismindeki baðlantý adresi deðiþkene atandý. 
@@ -51,6 +56,9 @@ namespace API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
             });
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
