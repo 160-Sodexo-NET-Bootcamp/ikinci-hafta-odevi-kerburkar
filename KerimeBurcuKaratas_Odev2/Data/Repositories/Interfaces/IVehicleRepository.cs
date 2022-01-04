@@ -11,5 +11,7 @@ namespace Data.Repositories.Interfaces
     //Vehicle için Repository patern uygulandı. (GenericRepository)
     public interface IVehicleRepository:IGenericRepository<Vehicle>
     {
+        //Verilen id ile vehicle ve container çekmek için kullanıldı.
+        public Task<Vehicle> GetById(long id);
     }
 }

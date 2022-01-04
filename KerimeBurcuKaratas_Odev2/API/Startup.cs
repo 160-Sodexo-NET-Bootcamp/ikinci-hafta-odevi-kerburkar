@@ -28,11 +28,17 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //json loop'unu iptal etmek için kullanýldý.
+            services.AddControllers()
+                .AddNewtonsoftJson(options =>
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                );
 
             services.AddControllers();
 
             //appsettings.json'daki ConnectionStrings'da "DefaultConnection" ismindeki baðlantý adresi deðiþkene atandý. 
             var dbConnection = Configuration.GetConnectionString("DefaultConnection");
+
             //SqlServer kullanmak için gerekli kod eklendi. ApplicationDbContext'deki Constractordaki options parametresi.
             services.AddDbContext<ApplicationDbContext>(options =>
 

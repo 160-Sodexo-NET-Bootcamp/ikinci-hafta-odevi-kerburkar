@@ -27,7 +27,15 @@ namespace API.Controllers
             var result = await _unitOfWork.Vehicle.GetAll();
             return Ok(result);
         }
-        
+
+        //Verilen id ile vehicle ve container görüntülemek için kullanıldı.
+        [HttpGet("getbyid/{id}")]
+        public async Task<IActionResult> GetById([FromRoute] long id)
+        {
+            var result = await _unitOfWork.Vehicle.GetById(id);
+            return Ok(result);
+        }
+
         //Yeni vehicle eklemek için kullanıldı.
         [HttpPost("add")]
         public async Task<IActionResult> Add([FromBody] Vehicle vehicle)
