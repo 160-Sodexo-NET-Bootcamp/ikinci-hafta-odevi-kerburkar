@@ -1,4 +1,5 @@
 ﻿using API.Dtos;
+using API.Model;
 using AutoMapper;
 using Data.DataModel;
 using Data.Uow;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace API.Controllers
@@ -69,6 +71,36 @@ namespace API.Controllers
             await _unitOfWork.Vehicle.Delete(id);
             var result = _unitOfWork.Complete();
             return Ok(result== 1 ? "Deleted Succesfully." : "Not Deleted.");
+        }
+
+        //Kümeleme işlemlerinin gösterimi için kullanıldı.
+        [HttpPost("cluster")]
+        public async Task<IActionResult> Cluster([FromBody] ClusterModel clusterModel)
+        {
+            var vehicle = await _unitOfWork.Vehicle.GetById(clusterModel.VehicleId);
+            if (vehicle == null)
+            {
+                return BadRequest("Vehicle not found.");
+            }
+            if (vehicle.Containers.Count < clusterModel.N)
+            {
+                return BadRequest("N cannot be greater than the number of container.");
+            }
+            if (vehicle.Containers.Count % clusterModel.N !=0)
+            {
+                return BadRequest("Containers cannot be clustered evenly. Containers count: "+vehicle.Containers.Count);
+            }
+
+            var list = new List<IEnumerable<ContainerDto>>(); 
+            var clusterCount = vehicle.Containers.Count/clusterModel.N; //küme sayısına erişmek için.
+            for (int i = 0; i < clusterCount; i++)
+            {
+                //Örneğin N=3 => i=0, skip=0, take=3 || i=1, skip=3, take=3  || i=2, skip=6, take=3.... 
+                var x = vehicle.Containers.ToList().Skip(i * clusterModel.N).Take(clusterModel.N);
+                var xmap = _mapper.Map<IEnumerable<ContainerDto>>(x);
+                list.Add(xmap);
+            }          
+            return Ok(list);
         }
     }
 }
