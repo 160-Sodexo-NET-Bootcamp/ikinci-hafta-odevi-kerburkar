@@ -12,8 +12,8 @@ namespace Data.Generic
     {
         Task<bool> Add(T entity);
         Task<bool> Update(T entity);
-        Task<bool> Delete(int id);
-        Task<T> GetById(int id);
+        Task<bool> Delete(long id);
+        Task<T> GetById(long id);
         Task<IEnumerable<T>> GetAll();
 
     }

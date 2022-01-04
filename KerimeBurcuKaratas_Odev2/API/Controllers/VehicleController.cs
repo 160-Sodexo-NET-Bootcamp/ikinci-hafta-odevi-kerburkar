@@ -1,4 +1,5 @@
-﻿using Data.Uow;
+﻿using Data.DataModel;
+using Data.Uow;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -18,13 +19,40 @@ namespace API.Controllers
             _unitOfWork = unitOfWork;
 
         }
-        
-        //Tüm araç listesini çekmek için kullanıldı.
-        [HttpGet]
+
+        //Tüm vehicle listesini göstermek için kullanıldı.
+        [HttpGet("getall")]
         public async Task<IActionResult> GetAll()
         {
             var result = await _unitOfWork.Vehicle.GetAll();
-            return Ok(result);  
+            return Ok(result);
+        }
+        
+        //Yeni vehicle eklemek için kullanıldı.
+        [HttpPost("add")]
+        public async Task<IActionResult> Add([FromBody] Vehicle vehicle)
+        {
+            await _unitOfWork.Vehicle.Add(vehicle);
+            var result = _unitOfWork.Complete();
+            return Ok(result);
+        }
+
+        //Vehicle bilgisi güncellemesi için kullanıldı.
+        [HttpPut("update")]
+        public async Task<IActionResult> Update([FromBody] Vehicle vehicle)
+        {
+            await _unitOfWork.Vehicle.Update(vehicle);
+            var result = _unitOfWork.Complete();
+            return Ok(result);
+        }
+
+        //Vehicle ve container silinmesi için kullanıldı.
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> Delete([FromRoute] long id)
+        {
+            await _unitOfWork.Vehicle.Delete(id);
+            var result = _unitOfWork.Complete();
+            return Ok(result);
         }
     }
 }

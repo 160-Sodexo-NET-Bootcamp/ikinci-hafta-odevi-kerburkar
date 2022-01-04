@@ -32,7 +32,7 @@ namespace Data.Generic
             return true; //kontrol edilecek.
         }
 
-        public async Task<bool> Delete(int id)
+        public async Task<bool> Delete(long id)
         {
             var entity = await dbSet.FindAsync(id);
             var result = dbSet.Remove(entity);
@@ -45,7 +45,7 @@ namespace Data.Generic
             return await dbSet.ToListAsync();
         }
 
-        public virtual async Task<T> GetById(int id)
+        public virtual async Task<T> GetById(long id)
         {
             var model = await dbSet.FindAsync(id);
             return model;
