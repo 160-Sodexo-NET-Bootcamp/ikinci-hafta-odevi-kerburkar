@@ -47,7 +47,7 @@ namespace API
             //SqlServer kullanmak için gerekli kod eklendi. ApplicationDbContext'deki Constractordaki options parametresi.
             services.AddDbContext<ApplicationDbContext>(options =>
 
-                    options.UseSqlServer(dbConnection)
+                    options.UseSqlServer(dbConnection).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
 
             );
             //Proje derlendiðinde UnitOfWork çalýþmasý için eklendi.

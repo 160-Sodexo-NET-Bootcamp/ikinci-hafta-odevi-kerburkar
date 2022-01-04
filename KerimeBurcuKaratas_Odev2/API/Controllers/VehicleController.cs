@@ -44,20 +44,22 @@ namespace API.Controllers
 
         //Yeni vehicle eklemek için kullanıldı.
         [HttpPost("add")]
-        public async Task<IActionResult> Add([FromBody] Vehicle vehicle)
+        public async Task<IActionResult> Add([FromBody] VehicleDto vehicledto)
         {
+            var vehicle = _mapper.Map<Vehicle>(vehicledto);
             await _unitOfWork.Vehicle.Add(vehicle);
             var result = _unitOfWork.Complete();
-            return Ok(result);
+            return Ok(result==1?"Added Succesfully.":"Not Added.");
         }
 
         //Vehicle bilgisi güncellemesi için kullanıldı.
         [HttpPut("update")]
-        public async Task<IActionResult> Update([FromBody] Vehicle vehicle)
+        public async Task<IActionResult> Update([FromBody] VehicleDto vehicledto)
         {
+            var vehicle = _mapper.Map<Vehicle>(vehicledto);
             await _unitOfWork.Vehicle.Update(vehicle);
             var result = _unitOfWork.Complete();
-            return Ok(result);
+            return Ok(result == 1 ? "Updated Succesfully." : "Not Updated.");
         }
 
         //Vehicle ve container silinmesi için kullanıldı.
@@ -66,7 +68,7 @@ namespace API.Controllers
         {
             await _unitOfWork.Vehicle.Delete(id);
             var result = _unitOfWork.Complete();
-            return Ok(result);
+            return Ok(result== 1 ? "Deleted Succesfully." : "Not Deleted.");
         }
     }
 }

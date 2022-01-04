@@ -10,7 +10,8 @@ namespace API.Common
         public MappingProfile()
         {
             CreateMap<Vehicle, VehicleDto>().ReverseMap();
-           
+            CreateMap<Container, ContainerDto>().ReverseMap();
+
         }
     }
 }
