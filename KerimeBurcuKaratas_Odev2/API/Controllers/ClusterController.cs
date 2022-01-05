@@ -6,6 +6,7 @@ using Data.Uow;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -50,8 +51,12 @@ namespace API.Controllers
             
             //Her containerin merkeze(0,0) olan uzaklığı hesaplatıldı.
             foreach (var container in containerWithDistance)
-            {                
-                container.Distance = GeoCoordinateHelper.CalculateDistance(container);
+            {
+                ////1.yol olarak GeoCoordinate kütüphanesini kullanıldığında kullanılacak kod. 
+                //container.Distance = GeoCoordinateHelper.CalculateDistance(container); 
+
+                //2.yol olarak da kütüphane kullanmadan, her container mesafesini, başlangıç noktasına(0,0) olan uzaklık hesaplatıldı.
+                container.Distance = DistanceAlgorithm.DistanceBetweenPlaces(0,0, Decimal.ToDouble(container.Longitude), Decimal.ToDouble(container.Latitude));
             }
           
             //Mesafeye göre sıralandı. Başlangıç noktasına en yakından en uzağa göre sıralandı.
