@@ -1,4 +1,5 @@
 ﻿using API.Dtos;
+using API.Model;
 using AutoMapper;
 using Data.DataModel;
 
@@ -11,7 +12,8 @@ namespace API.Common
         {
             CreateMap<Vehicle, VehicleDto>().ReverseMap();
             CreateMap<Container, ContainerDto>().ReverseMap();
-
+            CreateMap<Container, ContainerDistanceModel>().ReverseMap();
+            CreateMap<ContainerDto, ContainerDistanceModel>().ReverseMap();
         }
     }
 }

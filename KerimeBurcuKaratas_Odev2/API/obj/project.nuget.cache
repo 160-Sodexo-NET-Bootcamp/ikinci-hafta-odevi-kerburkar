@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Jf31gzgZ4iIebFFPptib0W5mX45OLDZJeu9KSB3O0Dbd5PhrC5PzJRfqWabV3pQhor5vhrS2Jn/VA2QtDKMCuw==",
+  "dgSpecHash": "FXnLHukfKmdORO/8kqCDxF3ZsysGUM2MGH9tTtQWTNgCoGFOhuw2jo2uPGYjiOe/tMMHZhSwqPa+506JysAuGg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Asus\\source\\repos\\160-Sodexo-NET-Bootcamp\\ikinci-hafta-odevi-kerburkar\\KerimeBurcuKaratas_Odev2\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\geocoordinate.netcore\\1.0.0.1\\geocoordinate.netcore.1.0.0.1.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.13\\microsoft.aspnetcore.jsonpatch.5.0.13.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.13\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.13.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
